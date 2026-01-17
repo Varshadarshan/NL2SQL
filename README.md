@@ -43,21 +43,24 @@ Key Features
 - `profit`
 
 
+## System Architecture
 
-System Architecture
-
-User Question (English)
+```text
+User enters a question in English
         ↓
-Schema-Aware Prompt (Hardcoded Rules)
+Schema-aware prompt construction
+(Hardcoded database schema + SQL rules)
         ↓
-Groq LLM (NL → SQL)
+Groq LLM (LLaMA 3.1)
+(Natural Language → SQL generation)
         ↓
-SQL Validation (SELECT-only)
+SQL safety validation
+(SELECT-only, schema-restricted)
         ↓
-PostgreSQL Execution
+PostgreSQL query execution
         ↓
-Result (Pandas DataFrame)
-
+Query results returned as Pandas DataFrame
+-
 
 ##  Tech Stack
 - Python
