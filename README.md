@@ -1,192 +1,68 @@
-# NL2SQL
+AI-Powered Natural Language to SQL (NL2SQL)
+
 Project Overview
+This project enables users to query a **PostgreSQL database using plain English**.  
+It leverages **Groq LLM (LLaMA 3.1)** with prompt engineering to generate **accurate, safe, and executable SQL queries**, returning results directly inside a Jupyter Notebook.
 
-This project enables users to query a PostgreSQL database using plain English instead of writing SQL.
-It leverages a Large Language Model (LLaMA 3.1 via Groq) with prompt engineering to convert natural language business questions into safe, executable SQL queries, execute them on a normalized relational database, and return analytical results.
-
-The system is designed for data analysts and business users to perform self-service analytics without deep SQL expertise.
-
-Problem Statement
-
-Business users often rely on data teams to write SQL queries for basic analytical questions, creating delays and bottlenecks.
-This project solves that problem by allowing users to ask questions in natural language and receive accurate results directly from the database.
+Designed to demonstrate **SQL expertise, data modeling, and AI integration** for Data Analyst roles.
 
 Key Features
-
-Natural Language → SQL conversion using LLM (Groq – LLaMA 3.1)
-
-PostgreSQL integration with normalized schema
-
-Schema-aware and JOIN-aware SQL generation
-
-Prompt-engineered SQL safety (SELECT-only, schema-restricted)
-
-End-to-end analytics workflow in Jupyter Notebook
-
-Supports aggregations, filters, joins, and sorting
-
-
-Dataset
-
-Superstore Sales Dataset (Kaggle)
-
-~9,994 records
-
-Cleaned and preprocessed before loading into PostgreSQL
+- Natural Language → SQL conversion using **LLM (Groq – LLaMA 3.1)**
+- **Schema-aware & JOIN-aware** SQL generation
+- Prompt-engineered **SQL safety** (SELECT-only, schema-restricted)
+- Normalized PostgreSQL database design
+- End-to-end analytics workflow in **Jupyter Notebook**
 
 
 Database Schema (Normalized)
-customers
 
-customer_id PRIMARY KEY,
-
-customer_name,
-
-segment,
-
-country,
-
-city,
-
-state,
-
+### Customers
+customer_id (PK)
+customer_name
+segment
+country
+city
+state
 region
 
+### Products
+product_id (PK)
+category
+sub_category
+product_name
 
-orders
-
-order_id,
-
-order_date,
-
-ship_date,
-
-customer_id,
-
-product_id,
-
-sales,
-
-quantity,
-
-discount,
-
+### Orders
+order_id
+order_date
+ship_date
+customer_id (FK)
+product_id (FK)
+sales
+quantity
+discount
 profit
 
 
-products
-
-product_id PRIMARY KEY,
-
-category,
-
-sub_category,
-
-product_name
-
-
-System Architecture
-
+## System Architecture
 User Question (English)
-        ↓
-Schema-Aware Prompt Engineering
-        ↓
+↓
+Schema-Aware Prompt (Hardcoded Schema Rules)
+↓
 Groq LLM (NL → SQL)
-        ↓
-SQL Safety Validation
-        ↓
+↓
+SQL Validation (SELECT-only)
+↓
 PostgreSQL Execution
-        ↓
-Query Result (DataFrame)
+↓
+Result (Pandas DataFrame)
 
 
-Tech Stack
 
+## Tech Stack
 Python
-
 PostgreSQL
-
 SQL
-
-Groq LLM (LLaMA 3.1)
-
+Groq LLM (LLaMA 3.1)9)
+Pandas, SQLAlchemy, psycopg2 (Python)
 Jupyter Notebook
 
-pandas, psycopg2, SQLAlchemy
-
-
-Setup Instructions
-
-1️⃣ Clone Repository
-
-git clone https://github.com/your-username/nl2sql-superstore.git
-cd nl2sql-superstore
-
-
-Install Dependencies
-
-pip install -r requirements.txt
-
-
-Configure Environment Variables
-
-Create a env.txt file:
-
-GROQ_API_KEY=your_groq_api_key
-
-DB_HOST=localhost
-
-DB_PORT=5432
-
-DB_NAME=superstore
-
-DB_USER=postgres
-
-DB_PASSWORD=password
-
-
-
-Prompt Engineering Strategy
-
-Hard-coded database schema in system prompt
-
-Enforced rules:
-
-Only SELECT queries allowed
-
-Only predefined tables and columns
-
-Proper JOIN usage required
-
-No explanations or markdown in output
-
-
-
-Use Cases
-
-Self-service analytics for business users
-
-Rapid data exploration by analysts
-
-AI-assisted business intelligence
-
-SQL automation and analytics acceleration
-
-
-
-
-🔮 Future Enhancements
-
-Streamlit or web-based UI
-
-Data visualizations (charts & dashboards)
-
-Query history and logging
-
-Multi-database support
-
-This ensures accuracy, safety, and reliability.
-
-
-
-This project demonstrates SQL expertise, data modeling, analytics thinking, and LLM integration
