@@ -29,35 +29,60 @@ Supports aggregations, filters, joins, and sorting
 Dataset
 
 Superstore Sales Dataset (Kaggle)
+
 ~9,994 records
+
 Cleaned and preprocessed before loading into PostgreSQL
 
+
 Database Schema (Normalized)
-customer
+customers
+
 customer_id PRIMARY KEY,
+
 customer_name,
+
 segment,
+
 country,
+
 city,
+
 state,
+
 region
 
-products schema
-product_id PRIMARY KEY,
-category,
-sub_category,
-product_name
 
-orders schema
+orders
+
 order_id,
+
 order_date,
+
 ship_date,
+
 customer_id,
+
 product_id,
+
 sales,
+
 quantity,
+
 discount,
+
 profit
+
+
+products
+
+product_id PRIMARY KEY,
+
+category,
+
+sub_category,
+
+product_name
 
 
 System Architecture
@@ -76,56 +101,92 @@ Query Result (DataFrame)
 
 
 Tech Stack
+
 Python
+
 PostgreSQL
+
 SQL
+
 Groq LLM (LLaMA 3.1)
+
 Jupyter Notebook
+
 pandas, psycopg2, SQLAlchemy
 
-Setup Instructions  (cmd)
+
+Setup Instructions
+
+1️⃣ Clone Repository
+
 git clone https://github.com/your-username/nl2sql-superstore.git
 cd nl2sql-superstore
 
+
 Install Dependencies
+
 pip install -r requirements.txt
 
 
 Configure Environment Variables
+
 Create a env.txt file:
 
 GROQ_API_KEY=your_groq_api_key
+
 DB_HOST=localhost
+
 DB_PORT=5432
+
 DB_NAME=superstore
+
 DB_USER=postgres
+
 DB_PASSWORD=password
 
 
+
 Prompt Engineering Strategy
+
 Hard-coded database schema in system prompt
+
 Enforced rules:
+
 Only SELECT queries allowed
+
 Only predefined tables and columns
+
 Proper JOIN usage required
+
 No explanations or markdown in output
-This ensures accuracy, safety, and reliability.
+
 
 
 Use Cases
 
 Self-service analytics for business users
+
 Rapid data exploration by analysts
+
 AI-assisted business intelligence
+
 SQL automation and analytics acceleration
 
 
-Future Enhancements
+
+
+🔮 Future Enhancements
+
 Streamlit or web-based UI
+
 Data visualizations (charts & dashboards)
+
 Query history and logging
+
 Multi-database support
 
+This ensures accuracy, safety, and reliability.
 
-Final Note
-This project demonstrates SQL expertise, data modeling, analytics thinking, and LLM integration, making it well-suited for Data Analyst, Analytics Engineer, and BI roles.
+
+
+This project demonstrates SQL expertise, data modeling, analytics thinking, and LLM integration
