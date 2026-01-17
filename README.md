@@ -14,11 +14,17 @@ This project solves that problem by allowing users to ask questions in natural l
 Key Features
 
 Natural Language → SQL conversion using LLM (Groq – LLaMA 3.1)
+
 PostgreSQL integration with normalized schema
+
 Schema-aware and JOIN-aware SQL generation
+
 Prompt-engineered SQL safety (SELECT-only, schema-restricted)
+
 End-to-end analytics workflow in Jupyter Notebook
+
 Supports aggregations, filters, joins, and sorting
+
 
 Dataset
 
