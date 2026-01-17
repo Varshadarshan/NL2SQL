@@ -1,8 +1,8 @@
-AI-Powered Natural Language to SQL (NL2SQL)
+## 📌 Project Overview
+This project enables users to query a **PostgreSQL database using plain English** instead of writing SQL manually.  
+It leverages **Groq LLM (LLaMA 3.1)** with prompt engineering to convert natural language questions into **accurate, schema-aware SQL queries**.
 
-Project Overview
-This project enables users to query a **PostgreSQL database using plain English**.  
-It leverages **Groq LLM (LLaMA 3.1)** with prompt engineering to generate **accurate, safe, and executable SQL queries**, returning results directly inside a Jupyter Notebook.
+The system enforces **SQL safety rules (SELECT-only)** and executes queries on a **normalized relational database**, returning analytical results as **Pandas DataFrames** inside a **Jupyter Notebook**.
 
 Designed to demonstrate **SQL expertise, data modeling, and AI integration** for Data Analyst roles.
 
