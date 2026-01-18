@@ -4,7 +4,7 @@ It leverages **Groq LLM (LLaMA 3.1)** with prompt engineering to convert natural
 
 The system enforces **SQL safety rules (SELECT-only)** and executes queries on a **normalized relational database**, returning analytical results as **Pandas DataFrames** inside a **Jupyter Notebook**.
 
-Designed to demonstrate **SQL expertise, data modeling, and AI integration** for Data Analyst roles.
+Designed to demonstrate **SQL expertise, data modeling, and AI integration**.
 
 Key Features
 - Natural Language → SQL conversion using **LLM (Groq – LLaMA 3.1)**
@@ -42,6 +42,13 @@ Key Features
 - `discount`
 - `profit`
 
+##  How to Use
+1. Open the Jupyter Notebook
+2. Ensure PostgreSQL is running and connected
+3. Enter a business question in plain English
+4. The system generates SQL and executes it automatically
+5. Results are displayed as a Pandas DataFrame
+
 
 ## System Architecture
 
@@ -71,5 +78,3 @@ Query results returned as Pandas DataFrame
 - SQLAlchemy
 - psycopg2
 - Jupyter Notebook
-
-
