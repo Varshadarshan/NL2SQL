@@ -42,6 +42,17 @@ Key Features
 - `discount`
 - `profit`
 
+##  Tech Stack
+- Python
+- PostgreSQL
+- SQL
+- Groq LLM (LLaMA 3.1)
+- Pandas
+- SQLAlchemy
+- psycopg2
+- Jupyter Notebook
+
+
 ##  How to Use
 1. Open the Jupyter Notebook
 2. Ensure PostgreSQL is running and connected
@@ -67,14 +78,3 @@ SQL safety validation
 PostgreSQL query execution
         ↓
 Query results returned as Pandas DataFrame
--
-
-##  Tech Stack
-- Python
-- PostgreSQL
-- SQL
-- Groq LLM (LLaMA 3.1)
-- Pandas
-- SQLAlchemy
-- psycopg2
-- Jupyter Notebook
