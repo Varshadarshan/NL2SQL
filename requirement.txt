@@ -1,0 +1,8 @@
+Tech Stack-------
+pandas
+sqlalchemy
+psycopg2-binary
+python-dotenv
+groq
+jupyter
+
