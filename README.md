@@ -1,4 +1,4 @@
-## 📌 Project Overview
+## Project Overview
 This project enables users to query a **PostgreSQL database using plain English** instead of writing SQL manually.  
 It leverages **Groq LLM (LLaMA 3.1)** with prompt engineering to convert natural language questions into **accurate, schema-aware SQL queries**.
 
